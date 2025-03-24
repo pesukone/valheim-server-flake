@@ -40,13 +40,13 @@ stdenv.mkDerivation (finalAttrs: {
     description = "BepInEx pack for Valheim";
     homepage = "https://valheim.thunderstore.io/package/denikson/BepInExPack_Valheim/";
     changelog = "https://valheim.thunderstore.io/package/denikson/BepInExPack_Valheim/";
-    sourceProvenance = [sourceTypes.binaryBytecode];
+    sourceProvenance = [ sourceTypes.binaryBytecode ];
     license = with licenses; [
       lgpl21Only # BepinEx, Doorstop, Il2CppInterop
       gpl3Only # Il2CppInterop
       mit # HarmonyX, MonoMod, cecil, Cpp2IL, .NET Runtime
     ];
-    maintainers = with maintainers; [aidalgol];
+    maintainers = with maintainers; [ pesukone ];
     inherit (valheim-server.meta) platforms;
   };
 })

@@ -10,7 +10,7 @@ Add this flake as an input, and add the NixOS module.  Your config should look s
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
     valheim-server = {
-      url = "github:aidalgol/valheim-server-flake";
+      url = "github:pesukone/valheim-server-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
