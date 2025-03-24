@@ -58,6 +58,15 @@ in
       '';
     };
 
+    noGraphics = lib.mkOption {
+      type = lib.types.bool;
+      default = false;
+      description = lib.mdDoc ''
+        Whether to run with graphics or not.
+        Enable this if you're headless with no GPU.
+      '';
+    };
+
     openFirewall = lib.mkOption {
       type = lib.types.bool;
       default = false;
@@ -286,6 +295,7 @@ in
                   [
                     "${valheimServerPkg}/bin/valheim-server"
                     "-name \"${cfg.serverName}\""
+                    "-batchmode"
                   ]
                   ++ (lib.lists.optional (cfg.worldName != null) "-world \"${cfg.worldName}\"")
                   ++ [
@@ -293,6 +303,7 @@ in
                     "-password \"${cfg.password}\""
                   ]
                   ++ (lib.lists.optional cfg.crossplay "-crossplay")
+                  ++ (lib.lists.optional cfg.noGraphics "-nographics")
                 );
             };
         };
