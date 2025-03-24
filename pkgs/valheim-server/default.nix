@@ -10,7 +10,7 @@ stdenv.mkDerivation (finalAttrs: {
     inherit (finalAttrs) name;
     appId = "896660";
     depotId = "896661";
-    manifestId = "7872048626245078252";
+    manifestId = "7407372182916713721";
     hash = "sha256-d1UbkdrTzu/TOjzND9F1iG9Jz8a850wtED+Id52qQcI=";
   };
 
