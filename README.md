@@ -22,11 +22,11 @@ Add this flake as an input, and add the NixOS module.  Your config should look s
     system = "x86_64-linux";
     pkgs = import nixpkgs {inherit system;};
   in {
-    nixosConfigurations.my-server= nixpkgs.lib.nixosSystem {
+    nixosConfigurations.my-server= nixpkgs.lib.nixosSystem rec {
       inherit system;
       modules = [
         ./configuration.nix
-        valheim-server.nixosModules.default
+        valheim-server.nixosModules.${system}.default
       ];
     };
   };
